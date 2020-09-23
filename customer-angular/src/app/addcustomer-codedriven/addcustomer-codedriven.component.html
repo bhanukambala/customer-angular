@@ -1,0 +1,34 @@
+<p>Add Customer</p>
+
+<form [formGroup]="customerForm" (ngSubmit)="customerForm.valid && addCustomer()">
+
+    <div>
+        <label>Name</label>
+        <input type="text" formControlName="customername">
+    </div>
+
+
+
+<div *ngIf="customernameCtrl.errors != null && customernameCtrl.errors.required" class="error">
+Customername is required
+</div>
+
+    <div>
+        <label>Balance</label>
+        <input type="number" formControlName="balance">
+    </div>
+
+<div *ngIf="balanceCtrl.errors != null && balanceCtrl.errors.required" class="error">
+Balance is required
+</div>
+
+    <input type="submit" formControlName="Submit">
+</form>
+<br>
+
+<div *ngIf="customer!=undefined">
+<h2>Add customer</h2>
+{{customer.id}}
+{{customer.customername}}
+{{customer.balance}}
+</div>

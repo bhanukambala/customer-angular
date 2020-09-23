@@ -1,0 +1,15 @@
+<p>customer-details works!</p>
+<form #idform=ngForm (ngSubmit)=findCustomer(idform)>
+
+    <label>Customer Id</label>
+    <input type="number" name="customerid" ngModel>
+
+    <input type="submit" value="Search">
+</form>
+<br>
+
+<div *ngIf="customer!==undefined">
+    Name is {{customer.name}}
+    Balance is {{customer.balance}}
+</div>
+<br>
